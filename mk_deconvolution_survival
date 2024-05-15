@@ -1,0 +1,31 @@
+result_dir=$(outdir)
+makefile_dir=$(dir $(firstword $(MAKEFILE_LIST)))
+makefile_name=$(notdir $(firstword $(MAKEFILE_LIST)))
+script=$(makefile_dir)/script/
+
+HELP:
+		@echo 程序功能：
+		@echo TCGA反卷积生存分析
+		@echo
+		@echo -e 'rds：              result for analysis by seurat3.0 ,已经注释好celltype的rds,需要未经过分选的肿瘤样本，最好去掉normal样本'
+		@echo -e 'outdir：           输出目录，结果输出目录。'
+		@echo -e 'tumor：            TCGA癌症类型，如TCGA-BLCA
+		@echo -e 'count：           TCGA bulkRNAseq count matrix, csv格式，每行是gene symbol名，每列是样本名称，且gene symbol不可有重复'
+		@echo -e 'meta：             TCGA 患者（样本）的临床信息，需要有sample,vital_status,status,time等信息'
+		@echo -e 'idents：           rds@meta.data scRNA用来反卷积的celltype列名'
+		@echo
+		@echo -e '请参考script/TCGA_download_readme.sh来下载count和meta所需要的TCGA数据'
+		@echo -e 'BayesPrism_deconvolution.R 需要用到10个CPU分析'
+		@echo
+		@echo 使用方法1：
+		@echo make -f makefile rds=  outdir= tumor= count= meta= idents=  deconvolution_Survival
+		@echo
+		@echo 程序更新：
+		@echo author:yaojiaying;
+deconvolution_survival:
+		echo `date "+%Y%m%d %H:%M:%S"` "- deconvolution_Survival - INFO - 开始分析"
+		mkdir -p $(outdir)/deconvolution
+		Rscript $(script)/BayesPrism_deconvolution.R $(count) $(rds) ${idents} NULL $(outdir)/deconvolution
+		mkdir -p $(outdir)/survival
+		Rscript $(script)/Survival_HR_analysis.R $(meta) $(outdir)/deconvolution/predicted_proportion_by_celltype.xls $(outdir)/survival $(tumor)
+		echo `date "+%Y%m%d %H:%M:%S"` "- Finished deconvolution_Survival - INFO - 分析完成"
