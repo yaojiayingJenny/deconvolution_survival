@@ -2,7 +2,7 @@
 mkdir result  
 make -f mk_deconvolution_survival rds=BC_Minor_tumor.rds outdir=result tumor=TCGA-BLCA count=TCGA-BLCA_406_gene_counts.csv meta=TCGA-BLCA.metaMatrix.RNA.csv idents=Minor deconvolution_survival  
 
-Notice: For the count file and metaMatrix file,please refer to script/TCGA_download_readme.sh  
+  Notice: For the count file and metaMatrix file,please refer to script/TCGA_download_readme.sh  
 
 
 2) Definition of HR:  
