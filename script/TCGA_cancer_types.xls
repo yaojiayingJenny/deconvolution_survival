@@ -1,0 +1,39 @@
+癌种	缩写	中文名称
+Adrenocortical Cancer	ACC	肾上腺皮质癌
+Bladder Cancer	BLCA	膀胱尿路上皮癌
+Breast Cancer	BRCA	乳腺浸润癌
+Cervical Cancer	CESC	宫颈鳞癌和腺癌
+Bile Duct Cancer	CHOL	胆管癌
+Colon Cancer	COAD	结肠癌
+Colon and Rectal Cancer	COADREAD	结直肠癌
+Large B-cell Lymphoma	DLBC	弥漫性大B细胞淋巴瘤
+Esophageal Cancer	ESCA	食管癌
+FFPE Pilot Phase II	FPPP	FFPE试点二期
+Glioblastoma	GBM	多形成性胶质细胞瘤
+lower grade glioma and glioblastoma	GBMLGG	胶质细胞瘤
+Head and Neck Cancer	HNSC	头颈癌
+Kidney Chromophobe	KICH	肾嫌色细胞癌
+Kidney Clear Cell Carcinoma	KIRC	肾透明细胞癌
+Kidney Papillary Cell Carcinoma	KIRP	肾乳头状细胞癌
+Acute Myeloid Leukemia	LAML	急性髓系白血病
+Lower Grade Glioma	LGG	脑低级别胶质瘤
+Liver Cancer	LIHC	肝癌
+Lung Adenocarcinoma	LUAD	肺腺癌
+Lung Cancer	LUNG	肺癌
+Lung Squamous Cell Carcinoma	LUSC	肺鳞状细胞癌
+Mesothelioma	MESO	间皮瘤
+Ovarian Cancer	OV	卵巢癌
+Pancreatic Cancer	PAAD	胰腺癌
+Pan-Cancer	PANCAN	泛癌
+Pheochromocytoma & Paraganglioma	PCPG	嗜铬细胞瘤和副神经节瘤
+Prostate Cancer	PRAD	前列腺癌
+Rectal Cancer	READ	直肠癌
+Sarcoma	SARC	肉瘤
+Melanoma	SKCM	皮肤黑色素瘤
+Stomach Cancer	STAD	胃癌
+Testicular Cancer	TGCT	睾丸癌
+Thyroid Cancer	THCA	甲状腺癌
+Thymoma (THYM)	THYM	胸腺瘤
+Endometrioid Cancer	UCEC	子宫内膜样癌
+Uterine Carcinosarcoma	UCS	子宫癌肉瘤
+Ocular melanomas	UVM	眼部黑色素瘤

@@ -13,7 +13,6 @@ args=commandArgs(T)
 library(ggpubr) #ggboxplot
 library(ggplot2)
 suppressWarnings(library(BayesPrism))
-#http://192.168.2.202:6006/annoroad/data1/bioinfo/PROJECT/big_Commercial/Cooperation/B_TET/TET_PUBLIC/yaojiaying/WDL/RNA_deconvolution/script/BayesPrism-main/tutorial_deconvolution.html
 # recommend the use of unnormalized and untransformed count data
 
 bulk.matrixfile=args[1]

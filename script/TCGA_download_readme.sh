@@ -1,5 +1,5 @@
-step1: 查询需要下载的癌症类型的TCGA缩写（如TCGA-COAD，结直肠癌）： https://zhuanlan.zhihu.com/p/344353688
-step2: 203登录节点运行参考以下脚本下载TCGA数据(RNAseq文件和meta临床信息文件)，直接进入交互界面/annoroad/data1/bioinfo/PMO/yaojiaying/anaconda3/envs/r4-base/bin/R
+step1: 查询需要下载的癌症类型的TCGA缩写（如TCGA-COAD，结直肠癌）,可以参考TCGA_cancer_types.xls
+step2: 可以联网的节点运行参考以下脚本下载TCGA数据(RNAseq文件和meta临床信息文件)，R直接进入交互界面
 step3: 下载完数据后，参考整理提取TCGA count数据,生存count matrix矩阵文件。
 
 ####----------------------------------------------------------------------------------------
@@ -9,9 +9,8 @@ library(DT)
 # COAD
 # Colon adenocarcinoma
 # 结肠癌
-setwd('/annoroad/data1/bioinfo/PROJECT/big_Commercial/Cooperation/B_TET/B_TET-086/Data/public/TCGA')
 #238登录节点下载完
-id<-'TCGA-COAD' #TCGA 缩写： https://zhuanlan.zhihu.com/p/344353688
+id<-'TCGA-COAD' #TCGA 缩写
 
 #下载bulk RNA单个样本的数据
 gdcRNADownload(project.id = id,data.type  = 'RNAseq', directory=paste0(id,'/RNAseq'))
@@ -32,8 +31,8 @@ write.table(metaMatrix.RNA,file=paste0(id,'.metaMatrix.RNA.csv'),quote=F,sep='\t
 ####----------------------------------------------------------------------------------------
 ##step3：整理提取TCGA count/tmp数据
 id<-'TCGA-COAD'
-dataset<-read.csv('/annoroad/data1/bioinfo/PROJECT/big_Commercial/Cooperation/B_TET/B_TET-086/Data/public/TCGA/TCGA-COAD.metaMatrix.RNA.csv',header=T,sep='\t')
-inpath='/annoroad/data1/bioinfo/PROJECT/big_Commercial/Cooperation/B_TET/B_TET-086/Data/public/TCGA/TCGA-COAD/RNAseq/'
+dataset<-read.csv('TCGA-COAD.metaMatrix.RNA.csv',header=T,sep='\t')
+inpath='TCGA-COAD/RNAseq/'
 data<-subset(dataset,sample_type=='PrimaryTumor') #SolidTissueNormal
 da<-read.table(filename<-paste0(inpath,data[1,2],'/',data[1,1]),sep='\t',skip=6)
 tmp<-data.frame(gene_id=da$V1,gene_name=da$V2,gene_type=da$V3)

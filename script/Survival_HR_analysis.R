@@ -15,8 +15,6 @@ library("ggpubr")
 require("ggrepel") #geom_text_repel
 
 #细胞占比生成分析
-# meta<-read.table('/annoroad/data1/bioinfo/PROJECT/big_Commercial/Cooperation/B_TET/B_TET-086/Data/public/TCGA/TCGA-COAD.metaMatrix.RNA.csv',header=T,sep='\t')
-# dataset<-read.table('/annoroad/data1/bioinfo/PROJECT/big_Commercial/Cooperation/B_TET/B_TET-086/Analysis/scRNA/6.survival/BayesPrism/predicted_proportion_by_celltype.xls',header=T,sep='\t')
 
 metafile=args[1]
 predictedfile=args[2]
